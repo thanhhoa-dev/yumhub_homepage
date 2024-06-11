@@ -1,0 +1,161 @@
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+// Variables
+@import "../../../global.scss";
+
+.container {
+    width: 100%;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+}
+.imgbanner {
+    width: 100%;
+    height: 600px;
+    object-fit: fill;
+}
+
+
+h1 {
+    text-align: center;
+    color: $primary-color-1;
+    margin-top: 50px;
+}
+.sectionPartner {
+    width: 88.78%;
+    height: 320px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row;
+    background-color: #F0F5FA;
+    border-radius: 100px;
+}
+
+.imgPartner {
+    width: auto;
+    height: 100%;
+    border-radius: 100px;
+}
+.partner {
+    width: calc(67% - 118px);
+    height: calc(90% - 55px);
+    margin-left: 1%;
+    margin-right: 1%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 118px;
+    .titleMerchant {
+        color : $primary-color-1;
+    }
+    .contentMerchant {
+        color : $primary-color-1;
+        width: 526px;
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    .divBtnMerchant {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-top: 30px;
+    }
+    .buttonMerchant {
+        margin-top: -10px;
+        width: 200px;
+        height: 43px;
+        color : $white-color;
+        border-radius: 100px;
+        border: 3px solid $primary-color-2;
+        background-color: $primary-color-1;
+        align-self: end;
+        align-items: end;
+        justify-self: end;
+    }
+    .buttonMerchant:hover {
+        transition: 0.3s ease;
+        transform: scale(1.1);
+        color : $white-color;
+        font-weight: 700;
+    }
+    h2 {
+        font-size: 33px;
+    }
+}
+.sectionWhy {
+  width: calc(88.78% - 200px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 70px auto 50px auto;
+    background-color: #F5FEFF;
+    border-radius: 25px;
+    padding: 30px 50px;
+    border: 5px solid $primary-color-1;
+  .reason {
+    width: 25%;
+    h3 {
+      font-size: 24px;
+      font-weight: 700;
+      font-family: $primary-font;
+      line-height: 32px;
+      color: $primary-color-1;
+      margin-bottom: 8px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 24px;
+      color : $black-color;
+      font-family: $secondary-font;
+      letter-spacing: 0px;
+      box-sizing: border-box;
+      border: 0px solid;
+    }
+  }
+}
+.benefitsSection {
+  .equipmentDocument {
+      display: flex;
+      padding: 40px;
+      border-radius: 15px;
+      margin: 20px auto;
+      max-width: 900px;
+      background-color: #d6e9c6;
+
+      .icon {
+          flex-shrink: 0;
+          margin-right: 30px;
+
+          img {
+              width: 80px;
+              height: 80px;
+          }
+      }
+
+      .content {
+          h2 {
+              margin-bottom: 20px;
+              text-align: left;
+              color: $black-color;
+          }
+
+          ul {
+              list-style: none;
+              padding: 0;
+
+              li {
+                  margin-bottom: 10px;
+
+                  .highlight {
+                      color: #000;
+                      font-weight: bold;
+                  }
+              }
+          }
+      }
+  }
+
+}

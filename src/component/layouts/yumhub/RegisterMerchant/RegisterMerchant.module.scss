@@ -1,0 +1,269 @@
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+// Variables
+@import "../../../global.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  width: 100%;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+  height: 800px;
+}
+
+.form-wrapper.form-slide {
+  transform: translateX(-50%);
+}
+
+.form-left {
+  flex: 1;
+  padding: 40px;
+}
+
+.form-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px 40px;
+  background-image: url("../../../../assets/images/demomerchantregister.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 800px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-error {
+  border-color: red;
+}
+
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.button-wrapper button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #5cb85c;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-wrapper button:hover {
+  background-color: #4cae4c;
+}
+
+.terms {
+  text-align: end;
+  margin-bottom: 20px;
+  color: $white-color;
+}
+
+.terms a {
+  color: $white-color;
+  text-decoration: none;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+.pot{
+  margin-bottom: 30px;
+  img {
+  width: 100px;
+  height: auto;
+  margin-top: 20px;
+}
+}
+.animation-container {
+  position: relative;
+  width: auto;
+  // height: 1000px;
+}
+
+.animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animation.slide-out {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.animation.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+.new-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.new-div.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+.new-div.slide-out {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.back-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background-color: #0056b3;
+}
+.classtest {
+  z-index: 1000;
+}
+.classtest2 {
+  z-index: 10;
+}
+.error-message {
+  background-color: $white-color;
+  width: fit-content;
+  padding: 5px 5px;
+  color : red;
+  border-radius: 10px;
+}
+// Media queries for responsiveness
+@media (max-width: 1224px) {
+  .form-wrapper {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .form-right {
+    display: none;
+  }
+  .form-left {
+    padding: 100px;
+    background-image: url("../../../../assets/images/demomerchantregister.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  }
+  .form-group {
+    width: 500px;
+  }
+  .form-group label {
+    font-size: 14px;
+    color: $white-color;
+  }
+  h3 {
+    color: $white-color;
+    background-color: $black-color;
+    width: fit-content;
+    padding: 15px auto;
+    font-size: 2rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .form-left {
+    padding: 30px;
+  }
+  h3 {
+    background-color: $black-color;
+    color: $white-color;
+    font-size: 2.5rem;
+  }
+  .form-group {
+    width: 350px;
+  }
+  .button-wrapper button {
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-left {
+    padding: 10px;
+    background-image: none;
+  }
+
+  .button-wrapper {
+    flex-direction: column;
+  }
+
+  .button-wrapper button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 6px;
+  }
+}

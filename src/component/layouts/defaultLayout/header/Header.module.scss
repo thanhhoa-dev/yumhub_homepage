@@ -1,0 +1,115 @@
+@import "../../../global.scss";
+
+.wrapper {
+  width: 100%;
+  background-color: $primary-color-1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  font-family: $primary-font;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $small-spacing $medium-spacing;
+
+  @media (max-width: 768px) {
+    padding: $small-spacing;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 60px;
+    margin-right: $small-spacing;
+  }
+
+  .textLogo {
+    font-size: $large-font-size;
+    font-weight: bold;
+    color: $white-color;
+    font-family: $primary-font;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.nav-toggle {
+  display: none;
+
+  @media (max-width: 1200px) {
+    display: block;
+    cursor: pointer;
+    font-size: $large-font-size;
+    color: $white-color;
+  }
+}
+
+nav {
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-left: $medium-spacing;
+
+      a {
+        text-decoration: none;
+        font-size: $large-font-size;
+        color: $white-color;
+        padding: $small-spacing $medium-spacing;
+        border-radius: $small-spacing;
+        transition: background-color 0.3s, color 0.3s;
+
+        &:hover {
+          background-color: $primary-color-2;
+          color: $white-color;
+        }
+
+        .icon {
+          margin-right: $small-spacing;
+          font-size: $large-font-size;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: $primary-color-1;
+    width: 100%;
+
+    ul {
+      flex-direction: column;
+      align-items: flex-end;
+
+      li {
+        margin-left: 0;
+        margin-bottom: $small-spacing;
+      }
+    }
+  }
+
+  .nav-active {
+    display: block;
+  }
+}

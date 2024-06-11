@@ -1,0 +1,173 @@
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+// Variables
+@import "../../../global.scss";
+
+.container {
+    width: 100%;
+}
+
+.banner {
+    width: 100%;
+    height: 400px;
+}
+.imgbanner {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.sectionAboutCompany {
+    width: 88.78%;
+    height: 400px;
+    background-color: $bg-input;
+    margin: 50px auto 0px auto;
+    display: flex;
+    flex-direction: row;
+    border-radius: 200px;
+}
+.titleAboutCompany {
+    width: 20%;
+    height: 87.5%;
+    background-color: $white-color;
+    margin: 25px;
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+    align-content: center;
+    h2 {
+        text-align: center;
+        font-size: 40px;
+        font-family: $primary-font;
+        font-weight: 700;
+        color : $primary-color-1;
+    }
+}
+.contentAboutCompany {
+    align-content: center;
+    height: 87.5%;
+    width: 80%;
+    margin: 25px 25px 25px 0px;
+    border-top-right-radius: 200px;
+    border-bottom-right-radius: 200px;
+    padding: 0 30px;
+    justify-content: center;
+    p {
+        width: 100%;
+        height: 43.2%;
+        text-align: center;
+        font-size: 22px;
+        font-family: $primary-font;
+        font-weight: 400;
+        color : $primary-color-1;
+    }
+}
+h1 {
+    text-align: center;
+    color: $primary-color-1;
+    margin-top: 50px;
+}
+.sectionPartner {
+    width: 88.78%;
+    height: 400px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+}
+.borderShipper {
+    border-top-right-radius: 200px;
+    border-bottom-right-radius: 200px;
+    background-color: $primary-color-1;
+    padding-right: 1%;
+}
+.borderMerchant {
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+    background-color: $bg-input;
+    padding-left: 1%;
+}
+.imgPartner {
+    width: 30%;
+    height: 90%;
+    border-radius: 50%;
+    margin-top: 1.5%;
+}
+.partner {
+    width: calc(67% - 118px);
+    height: calc(90% - 55px);
+    margin-left: 1%;
+    margin-right: 1%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 118px;
+    .titleShipper {
+        color : $white-color;
+    }
+    .titleMerchant {
+        color : $primary-color-1;
+    }
+    .contentShipper {
+        color : $white-color;
+        width: 526px;
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    .contentMerchant {
+        color : $primary-color-1;
+        width: 526px;
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    .divBtnMerchant {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding-right: 55px;
+    }
+    .buttonShipper {
+        width: 200px;
+        height: 43px;
+        color : $primary-color-1;
+        border-radius: 100px;
+        border: 3px solid $primary-color-2;
+        margin-top: 30px;
+        background-color: white;
+    }
+    .buttonShipper:hover {
+        transition: 0.3s ease;
+        transform: scale(1.1);
+        color : $primary-color-1;
+        font-weight: 700;
+    }
+    .buttonMerchant {
+        margin-top: -10px;
+        width: 200px;
+        height: 43px;
+        color : $white-color;
+        border-radius: 100px;
+        border: 3px solid $primary-color-2;
+        align-self: end;
+        align-items: end;
+        justify-self: end;
+        background-color: $primary-color-1;
+    }
+    .buttonMerchant:hover {
+        transition: 0.3s ease;
+        transform: scale(1.1);
+        color : $white-color;
+        font-weight: 700;
+    }
+    h2 {
+        font-size: 33px;
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+.swipeArea {
+    width : 100%;
+    height: 400px;
+}
+.sectionSlider {
+    width: 88.78%;
+    margin: 10px auto;
+}

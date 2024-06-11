@@ -1,0 +1,39 @@
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+// Slider.scss
+@import "../../../global.scss";
+.slide {
+  width: 100%;
+}
+.slideItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: $primary-color-1;
+  border-radius: 150px;
+  padding-bottom: 30px;
+}
+.slideImg {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-top: 30px;
+  object-fit: cover;
+}
+.slideContent {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  margin-top: 50px;
+  width: 40%;
+  h2 {
+    color: $white-color;
+  }
+  .content {
+    color: $white-color;
+    width: 100%;
+    font-size: 16px;
+  }
+}

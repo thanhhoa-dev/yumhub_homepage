@@ -1,0 +1,19 @@
+/* components/Loading.css */
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8); /* Nền mờ để nổi bật ảnh loading */
+    z-index: 9999; /* Đảm bảo loading hiển thị trên cùng */
+  }
+  
+  .loading-gif {
+    width: 100px; /* Kích thước ảnh loading */
+    height: 100px;
+  }
+  
