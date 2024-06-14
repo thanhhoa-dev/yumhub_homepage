@@ -26,7 +26,7 @@ COPY --from=build /app/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose port (nginx sẽ tự động sử dụng cổng được chỉ định bởi Heroku)
-EXPOSE $PORT
+EXPOSE 80
 
 # Khởi động nginx
 CMD ["nginx", "-g", "daemon off;"]
