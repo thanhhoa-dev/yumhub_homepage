@@ -83,7 +83,7 @@
 .button-wrapper button {
   padding: 10px 20px;
   border: none;
-  background-color: #5cb85c;
+  background-color: $primary-color-1;
   color: #fff;
   font-size: 16px;
   border-radius: 4px;
@@ -91,7 +91,8 @@
 }
 
 .button-wrapper button:hover {
-  background-color: #4cae4c;
+  background-color: $primary-color-2;
+  color: $secondary-color;
 }
 
 .terms {

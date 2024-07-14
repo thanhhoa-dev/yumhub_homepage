@@ -60,7 +60,7 @@ function Shipper() {
           <div className={styles.content}>
             <h2>Phúc lợi hấp dẫn</h2>
             <ul>
-              <li>Doanh thu lên đến <span className={styles.highlight}>15.000.000đ/tháng</span></li>
+              <li>Doanh thu lên đến:    <span className={styles.highlight}>15.000.000đ/tháng</span></li>
               <li>Rút doanh thu về tay nhanh chóng</li>
               <li>Tham gia chương trình GoCaptain nhận phúc lợi mỗi tháng</li>
               <li>Cộng đồng Gojek phủ sóng mọi nơi và luôn sẵn sàng hỗ trợ</li>

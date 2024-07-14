@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState  } from 'react';
+import { Link } from "react-router-dom";
 import styles from "./Home.module.scss"
 import SimpleSlider from './Slider';
 import banner from '../../../../assets/images/banner.png';
@@ -9,14 +10,13 @@ function Home() {
     <div style={{width:"100%"}}>
       <div className={styles.banner}>
         <img src={banner} alt="Banner" className={styles.imgbanner} />
+        <Link to="/yumhub" className={styles.aboutYumhub}>Xem thêm Về YumHub</Link>
+        
       </div>
-      <div className={styles.sectionAboutCompany}>
-        <div className={styles.titleAboutCompany}>
-          <h2>Về<br />YumHub</h2>
-        </div>
-        <div className={styles.contentAboutCompany}>
-          <p>YumHub là nền tảng hàng đầu về thực phẩm và dịch vụ giao hàng, giúp người dùng dễ dàng khám phá và đặt món từ hàng trăm nhà hàng địa phương. Với giao diện thân thiện và hệ thống đặt hàng nhanh chóng, YumHub mang đến trải nghiệm ẩm thực tuyệt vời, tiết kiệm thời gian và công sức. Dịch vụ giao hàng chuyên nghiệp đảm bảo món ăn được giao nhanh chóng và nóng hổi. YumHub - bạn đồng hành đáng tin cậy cho mọi bữa ăn.</p>
-        </div>
+
+      <div className={styles.section}>
+        <span>Từ những dịch vụ thiết yếu đến cơ hội gia tăng thu nhập. </span>
+          <span>Tất cả đều có trên một nền tảng</span>
       </div>
       <div className={[styles.sectionPartner, styles.borderShipper].join(' ')}>
         <div className={styles.partner}>

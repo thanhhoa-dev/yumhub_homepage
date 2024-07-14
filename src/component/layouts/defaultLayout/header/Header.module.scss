@@ -11,8 +11,7 @@
 }
 
 .inner {
-  max-width: 1200px;
-  margin: 0 auto;
+  // max-width: 1200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,9 +58,6 @@ nav {
   ul {
     list-style: none;
     display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
 
     li {
       margin-left: $medium-spacing;
@@ -110,6 +106,8 @@ nav {
   }
 
   .nav-active {
-    display: block;
+    // display: flex;
+    // justify-content: space-between;
+    // flex:end;
   }
 }

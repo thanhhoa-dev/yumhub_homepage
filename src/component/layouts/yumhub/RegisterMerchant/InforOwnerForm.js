@@ -41,7 +41,7 @@ const InforOwnerForm = ({ formData, handleChange, validatePhoneNumber, validateE
           ) : key === 'Số điện thoại' ? (
             <>
               <input
-                type='number'
+                type='text'
                 id={key}
                 name={key}
                 value={formData[key]}
