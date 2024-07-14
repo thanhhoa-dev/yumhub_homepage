@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WebSocket Test</title>
+</head>
+<body>
+  <script>
+    console.log('start');
+    const socket = new WebSocket('ws://172.16.17.118:8080');
+
+    socket.onopen = () => {
+      console.log('Connected to server');
+      // Gửi token sau khi kết nối WebSocket được mở
+      const authMessage = JSON.stringify({
+        token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6IjA3Nzc2NjY4ODgiLCJzZXgiOiJGZW1hbGUiLCJlbWFpbCI6Im5naGlhcHRwczI2NjI1QGZwdC5lZHUudm4iLCJmdWxsTmFtZSI6IlBo4bqhbSBUcuG7jW5nIE5naMSpYSIsImF2YXRhciI6Imh0dHBzOi8vaS5waW5pbWcuY29tLzU2NHgvZDcvOTYvNGMvZDc5NjRjNWNkZWRjMzA3ZTFhMmQxZTRlNDY0MjYxZWYuanBnIiwibWVyY2hhbnRJRCI6IjY2NjNmM2ZiMzE3OWQzOTE5MWE5YzAxMSIsInJvbGUiOjEsImlhdCI6MTcxODE1OTE0MSwiZXhwIjoxNzIwNzUxMTQxfQ.hgoiwPN76_lid2VRM18mYzHR_wWlkrNmRMlx3SaWnrM",
+        id: '660c99c2fc13ae788b50fbe0',
+        typeclient: 'customer'
+      });
+      socket.send(authMessage);
+      socket.send('Hello from client');
+    };
+
+    socket.onmessage = (event) => {
+      console.log('Message from server:', event.data);
+    };
+
+    socket.onclose = () => {
+      console.log('Disconnected from server');
+    };
+
+    socket.onerror = (error) => {
+      console.error('WebSocket error: ', error);
+    };
+    console.log(socket);
+    console.log('end');
+  </script>
+</body>
+</html>
