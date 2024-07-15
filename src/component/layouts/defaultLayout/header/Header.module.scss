@@ -25,6 +25,9 @@
 .logo {
   display: flex;
   align-items: center;
+  a{
+    text-decoration: none;
+  }
 
   img {
     height: 60px;
@@ -32,7 +35,7 @@
   }
 
   .textLogo {
-    font-size: $large-font-size;
+    font-size: 30px;
     font-weight: bold;
     color: $white-color;
     font-family: $primary-font;
@@ -66,13 +69,15 @@ nav {
         text-decoration: none;
         font-size: $large-font-size;
         color: $white-color;
-        padding: $small-spacing $medium-spacing;
+        padding: $medium-spacing $medium-spacing;
         border-radius: $small-spacing;
+        font-weight: 900;
         transition: background-color 0.3s, color 0.3s;
 
         &:hover {
           background-color: $primary-color-2;
-          color: $white-color;
+          color: $primary-color-1;
+          font-weight: 900;
         }
 
         .icon {

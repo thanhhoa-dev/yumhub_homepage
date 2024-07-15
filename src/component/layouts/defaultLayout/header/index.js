@@ -21,8 +21,11 @@ function Header() {
         <div className={cx("logo")}>
           <Link to="/">
             <img src={logo} alt="Logo YumHub" />
+            
           </Link>
+          <Link to="/">
           <p className={cx("textLogo")}>YumHub</p>
+          </Link>
         </div>
         <div className={cx("nav-toggle")} onClick={toggleNav}>
           <FontAwesomeIcon icon={faBars} />
