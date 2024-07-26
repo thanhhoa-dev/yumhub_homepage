@@ -33,13 +33,13 @@ function Header() {
         <nav className={cx({ "nav-active": isNavOpen })}>
           <ul>
             <li>
-              <Link to="/shipper">Shipper</Link>
+              <Link to="/shipper">Đối tác tài xế</Link>
             </li>
             <li>
               <Link to="/merchant">Đối tác nhà hàng</Link>
             </li>
             <li>
-              <Link to="/register-shipper">Đăng ký Shipper</Link>
+              <Link to="/register-shipper">Đăng ký đối tác tài xế </Link>
             </li>
             <li>
               <Link to="/register-merchant">Đăng ký đối tác nhà hàng</Link>
