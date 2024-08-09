@@ -83,7 +83,7 @@ function RegisterShipper() {
   };
 
   const fileUploadHandler = async () => {
-    const endpoint = 'http://localhost:3001/files/upload';
+    const endpoint = 'https://duantotnghiep-api-a32664265dc1.herokuapp.com/files/upload';
     const filesToUpload = [
       { file: selectedAvatar, type: 'avatar' },
       { file: selectedIDFront, type: 'idFront' },

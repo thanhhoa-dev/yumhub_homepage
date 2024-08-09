@@ -7,6 +7,8 @@ import RegisterMerchant from '../component/layouts/yumhub/RegisterMerchant/Regis
 import RegiterShipper from '../component/layouts/yumhub/RegisterShipper/RegisterShipper'
 import YumHub from '../component/layouts/yumhub/Yumhub/Yumhub'
 import Contact from '../component/layouts/yumhub/Contact/Contact'
+import UpdateShipperInfo from '../component/layouts/yumhub/RegisterShipper/UpdateInfo'
+import UpdateMerchantInfo from '../component/layouts/yumhub/RegisterMerchant/UpdateInfo'
 
 const mapRoutes = [
     { path: '/', component: Home, layout: DefaultLayout },
@@ -15,6 +17,9 @@ const mapRoutes = [
     { path: '/register-shipper', component: RegiterShipper, layout: DefaultLayout}, 
     { path: '/register-merchant', component: RegisterMerchant, layout: DefaultLayout }, 
     { path: '/yumhub', component: YumHub, layout: DefaultLayout },
+
+    { path: '/updateInfoShipper/:id/:token', component: UpdateShipperInfo, layout: DefaultLayout },
+    { path: 'updateInfoMerchant/:id/:token', component: UpdateMerchantInfo, layout: DefaultLayout },
 
 ]
 
