@@ -12,26 +12,26 @@ const SimpleSlider = () => {
     {
       id: 'slide1',
       name: 'Đoàn Thanh Hòa',
-      content: '"Cảm ơn Yumhub đã giúp em trên con đường để đi du học. Cảm ơn chị Diễm - cô giáo đáng yêu của em đã giúp em biết thêm được tiếng Hàn. Cảm ơn chị Lan Anh đã nhiệt tình tư vấn cho em. Cảm ơn anh Văn - giám đốc trung tâm đã đưa ra những lời khuyên bổ ích khi du học.',
-      img: 'https://i.pinimg.com/564x/2b/0f/7a/2b0f7a9533237b7e9b49f62ba73b95dc.jpg'
+      content: '"YumHub đã trở thành lựa chọn số một của tôi mỗi khi muốn đặt đồ ăn. Thời gian giao hàng nhanh và món ăn luôn tươi ngon!',
+      img: 'https://scontent.fsgn4-1.fna.fbcdn.net/v/t39.30808-6/438260809_2407518359444088_3798971936847354816_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEHAnofWEPN30IzFZGGS35RvPI-TuCklkK88j5O4KSWQgV4wjaZEEcIWGa8Ak7MFKDTIt9pC2biVuhGEeO-vRoy&_nc_ohc=ptl1N3MDF5AQ7kNvgG-6kBs&_nc_zt=23&_nc_ht=scontent.fsgn4-1.fna&oh=00_AYAZ0Cs57iVWStC4rI6WdnAzwCmIaqPvtz22hBkxqT_7bw&oe=66BFE750'
     },
     {
       id: 'slide2',
-      name: 'Tạ Thị Kim Cúc',
-      content: '"Cảm ơn Yumhub đã giúp em trên con đường để đi du học. Cảm ơn chị Diễm - cô giáo đáng yêu của em đã giúp em biết thêm được tiếng Hàn. Cảm ơn chị Lan Anh đã nhiệt tình tư vấn cho em. Cảm ơn anh Văn - giám đốc trung tâm đã đưa ra những lời khuyên bổ ích khi du học.',
-      img: 'https://m.yodycdn.com/blog/avatar-dep-cho-nam-yody-vn.jpg'
+      name: 'Nguyễn Bá Sơn',
+      content: '"Dịch vụ của YumHub thật tuyệt vời! Tôi rất ấn tượng với sự chuyên nghiệp của các shipper và chất lượng món ăn.',
+      img: 'https://e0.pxfuel.com/wallpapers/487/198/desktop-wallpaper-handsome-man-handsome-men.jpg'
     },
     {
       id: 'slide3',
-      name: 'Tạ Văn Yasuo',
-      content: '"Cảm ơn Yumhub đã giúp em trên con đường để đi du học. Cảm ơn chị Diễm - cô giáo đáng yêu của em đã giúp em biết thêm được tiếng Hàn. Cảm ơn chị Lan Anh đã nhiệt tình tư vấn cho em. Cảm ơn anh Văn - giám đốc trung tâm đã đưa ra những lời khuyên bổ ích khi du học.',
-      img: 'https://chiemtaimobile.vn/images/companies/1/%E1%BA%A2nh%20Blog/avatar-facebook-dep/Anh-avatar-hoat-hinh-de-thuong-xinh-xan.jpg?1704788263223'
+      name: 'Lê Văn Hoàng',
+      content: '"Tôi yêu cách mà YumHub cung cấp nhiều lựa chọn nhà hàng đa dạng, phù hợp với mọi khẩu vị. Chắc chắn sẽ tiếp tục ủng hộ!',
+      img: 'https://www.shutterstock.com/shutterstock/videos/1104036177/thumb/11.jpg?ip=x480'
     },
     {
       id: 'slide4',
       name: 'Trương Minh Thi',
-      content: '"Cảm ơn Yumhub đã giúp em trên con đường để đi du học. Cảm ơn chị Diễm - cô giáo đáng yêu của em đã giúp em biết thêm được tiếng Hàn. Cảm ơn chị Lan Anh đã nhiệt tình tư vấn cho em. Cảm ơn anh Văn - giám đốc trung tâm đã đưa ra những lời khuyên bổ ích khi du học.',
-      img: 'https://media.licdn.com/dms/image/D560BAQE96KctT7x-iw/company-logo_200_200/0/1666170056423?e=2147483647&v=beta&t=VWwOyGELKPqLpkj7dbxaCDtWbhWKvp3akvhvMdHivy4'
+      content: '"Đặt đồ ăn qua YumHub chưa bao giờ dễ dàng đến thế. Giao diện thân thiện, quy trình đặt đơn giản và giao hàng đúng giờ.',
+      img: 'https://www.shutterstock.com/image-photo/young-african-man-walking-forward-260nw-1865440885.jpg'
     },
   ];
   return (

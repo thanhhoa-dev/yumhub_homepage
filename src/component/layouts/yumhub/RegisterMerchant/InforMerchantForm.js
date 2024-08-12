@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 const InforMerchantForm = ({ formData, handleChange, validateEmail, selectedHandler, categories }) => {
   return (
     <>
-      {Object.keys(formData).slice(0, 7).map((key) => (
+      {Object.keys(formData).slice(0, 8).map((key) => (
         <div className={cx('form-group')} key={key}>
           <label htmlFor={key}>{key.charAt(0).toUpperCase() + key.slice(1)}</label>
           {key === 'Loại nhà hàng' ? (
@@ -18,7 +18,7 @@ const InforMerchantForm = ({ formData, handleChange, validateEmail, selectedHand
                <option key={category._id} value={category._id}>{category.name}</option>
              ))}
            </select>
-          ) : key === 'Ảnh nền/đại diện' || key === 'Giấy phép kinh doanh' ? (
+          ) : key === 'Ảnh nền/đại diện' || key === 'Giấy phép kinh doanh mặt trước' || key === 'Giấy phép kinh doanh mặt sau'? (
             <>
               <input
                 type="file"

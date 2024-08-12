@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 const InforOwnerForm = ({ formData, handleChange, validatePhoneNumber, validateEmail, selectedHandler, avatarPreview }) => {
   return (
     <>
-      {Object.keys(formData).slice(7).map((key) => (
+      {Object.keys(formData).slice(8).map((key) => (
         <div className={cx('form-group')} key={key}>
           <label htmlFor={key}>{key.charAt(0).toUpperCase() + key.slice(1)}</label>
           {key === 'Giới tính' ? (
@@ -17,17 +17,17 @@ const InforOwnerForm = ({ formData, handleChange, validatePhoneNumber, validateE
               <option value="Male">Nam</option>
               <option value="Female">Nữ</option>
             </select>
-          ) : key === 'Ảnh khuôn mặt' ? (
+          ) : key === 'Ảnh khuôn mặt' || key === "CCCD mặt trước" || key === "CCCD mặt sau" ? (
             <>
               <input
                 type="file"
                 id={key}
                 name={key}
                 accept="image/*"
-                onChange={e => selectedHandler(e, 'Ảnh khuôn mặt')}
+                onChange={e => selectedHandler(e, key)}
                 required
               />
-              {avatarPreview && <img src={avatarPreview} alt="Avatar Preview" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
+              {/* {avatarPreview && <img src={avatarPreview} alt="Avatar Preview" style={{ width: '100px', height: '100px', marginTop: '10px' }} />} */}
             </>
           ) : key === 'Ngày sinh' ? (
             <input

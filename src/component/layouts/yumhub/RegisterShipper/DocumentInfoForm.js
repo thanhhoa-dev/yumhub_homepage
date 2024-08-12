@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 const DocumentInfoForm = ({ formData, handleChange, selectedHandler }) => {
   return (
-    <>
+    <div className={cx('scroll-container')}>
       {Object.keys(formData).slice(7).map((key) => (
         <div className={cx('form-group')} key={key}>
           <label htmlFor={key}>{key.charAt(0).toUpperCase() + key.slice(1)}</label>
@@ -32,7 +32,7 @@ const DocumentInfoForm = ({ formData, handleChange, selectedHandler }) => {
           )}
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

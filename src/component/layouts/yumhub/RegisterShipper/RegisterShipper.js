@@ -31,6 +31,8 @@ function RegisterShipper() {
     "Mặt sau CCCD": '',
     "Mặt trước GPLX": '',
     "Mặt sau GPLX": '',
+    "Mặt trước Cavet xe": '',
+    "Mặt sau Cavet xe": '',
     "Biển số xe": '',
     "Thương hiệu xe": '',
     "Modecode": ''
@@ -42,6 +44,8 @@ function RegisterShipper() {
   const [selectedIDBack, setSelectedIDBack] = useState(null);
   const [selectedDriverFront, setSelectedDriverFront] = useState(null);
   const [selectedDriverBack, setSelectedDriverBack] = useState(null);
+  const [parrotCarFontSide, setparrotCarFontSide] = useState(null);
+  const [parrotCarBackSide, setparrotCarBackSide] = useState(null);
 
   const [uploadedURLs, setUploadedURLs] = useState([]);
 
@@ -66,6 +70,12 @@ function RegisterShipper() {
       case 'Mặt sau GPLX':
         setSelectedDriverBack(file);
         break;
+      case 'Mặt trước Cavet xe':
+        setparrotCarFontSide(file);
+        break;
+      case 'Mặt sau Cavet xe':
+        setparrotCarBackSide(file);
+        break;
       default:
         break;
     }
@@ -77,7 +87,9 @@ function RegisterShipper() {
       { file: selectedIDFront, type: 'idFront' },
       { file: selectedIDBack, type: 'idBack' },
       { file: selectedDriverFront, type: 'driverFront' },
-      { file: selectedDriverBack, type: 'driverBack' }
+      { file: selectedDriverBack, type: 'driverBack' },
+      { file: parrotCarFontSide, type: 'parrotFront'},
+      { file: parrotCarBackSide, type: 'parrotBack'}
     ];
     return !filesToUpload.some(item => item.file === null);
   };
@@ -89,7 +101,9 @@ function RegisterShipper() {
       { file: selectedIDFront, type: 'idFront' },
       { file: selectedIDBack, type: 'idBack' },
       { file: selectedDriverFront, type: 'driverFront' },
-      { file: selectedDriverBack, type: 'driverBack' }
+      { file: selectedDriverBack, type: 'driverBack' },
+      { file: parrotCarFontSide, type: 'parrotFront' },
+      { file: parrotCarBackSide, type: 'parrotBack' },
     ];
 
     const uploadPromises = filesToUpload.map(item =>
@@ -98,6 +112,8 @@ function RegisterShipper() {
 
     try {
       const results = await Promise.all(uploadPromises);
+      console.log("result", results);
+      
       const errors = results.filter(result => result.error);
       const successURLs = results.filter(result => !result.error).map(result => result.url);
 
@@ -141,14 +157,17 @@ function RegisterShipper() {
     if (validateEmail() && validatePhoneNumber()) {
       setLoading(true);
       await new Promise(resolve => setTimeout(resolve, 1000));
-
+      console.log("158");
+      
       if (checkSelectedImages()) {
         const uploadSuccess = await fileUploadHandler();
 
         if (uploadSuccess) {
+          console.log("upload all ảnh thành công");
+          
           const formDataToSend = mapFormDataToApiData(formData, uploadedURLs);
 
-          axios.post('http://localhost:3001/shippers/createShipper', JSON.stringify(formDataToSend), {
+          axios.post('https://duantotnghiep-api-a32664265dc1.herokuapp.com/shippers/createShipper', JSON.stringify(formDataToSend), {
             headers: {
               'Content-Type': 'application/json',
             },
@@ -164,6 +183,9 @@ function RegisterShipper() {
               showNotification("Có lỗi xảy ra khi đăng ký", "error", true);
               console.error(error);
             });
+        }else{
+          console.log("upload ảnh k thành công");
+          
         }
         setLoading(false);
       }

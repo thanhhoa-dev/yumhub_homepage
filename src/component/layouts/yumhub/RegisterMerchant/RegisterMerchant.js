@@ -27,18 +27,26 @@ function RegisterMerchant() {
     "Giờ mở cửa": '',
     "Giờ đóng cửa": '',
     "Ảnh nền/đại diện": '',
-    "Giấy phép kinh doanh": '',
+    "Giấy phép kinh doanh mặt trước": '',
+    "Giấy phép kinh doanh mặt sau": '',
     "Họ và tên": '',
     "Số điện thoại": '',
     "Email": '',
     "Ảnh khuôn mặt": '',
     "Giới tính": '',
+    "CCCD mặt trước": '',
+    "CCCD mặt sau": '',
   });
   const [selectedAvatar, setSelectedAvatar] = useState(null);
   const [avatarPreview, setAvatarPreview] = useState(null);
 
   const [selectedImgBg, setSelectedImgBg] = useState(null);
-  const [selectedLicense, setSelectedLicense] = useState(null);
+
+  const [selectedLicenseFront, setSelectedLicenseFront] = useState(null);
+  const [selectedLicenseBack, setSelectedLicenseBack] = useState(null);
+
+  const [selectedIDFront, setSelectedIDFront] = useState(null);
+  const [selectedIDBack, setSelectedIDBack] = useState(null);
 
   const [uploadedURLs, setUploadedURLs] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -46,7 +54,7 @@ function RegisterMerchant() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/typeOfMerchant/all');
+        const response = await axios.get('https://duantotnghiep-api-a32664265dc1.herokuapp.com/typeOfMerchant/all');
         if(response.data.result)
           setCategories(response.data.category);
       } catch (error) {
@@ -69,8 +77,17 @@ function RegisterMerchant() {
       case 'Ảnh nền/đại diện':
         setSelectedImgBg(file);
         break;
-      case 'Giấy phép kinh doanh':
-        setSelectedLicense(file);
+      case 'Giấy phép kinh doanh mặt trước':
+        setSelectedLicenseFront(file);
+        break;
+      case 'Giấy phép kinh doanh mặt sau':
+        setSelectedLicenseBack(file);
+        break;
+      case 'CCCD mặt trước':
+        setSelectedIDFront(file);
+        break;
+      case 'CCCD mặt sau':
+        setSelectedIDBack(file);
         break;
       default:
         break;
@@ -81,17 +98,25 @@ function RegisterMerchant() {
     const filesToUpload = [
       { file: selectedAvatar, type: 'Ảnh khuôn mặt' },
       { file: selectedImgBg, type: 'Ảnh nền/đại diện' },
-      { file: selectedLicense, type: 'Giấy phép kinh doanh' }
+      { file: selectedLicenseFront, type: 'Giấy phép kinh doanh mặt trước' },
+      { file: selectedLicenseBack, type: 'Giấy phép kinh doanh mặt sau' },
+      { file: selectedIDFront, type: 'CCCD mặt trước' },
+      { file: selectedIDBack, type: 'CCCD mặt sau' }
     ];
+    console.log(filesToUpload);
+    
     return !filesToUpload.some(item => item.file === null);
   };
-
+  
   const fileUploadHandler = async () => {
-    const endpoint = 'http://localhost:3001/files/upload';
+    const endpoint = 'https://duantotnghiep-api-a32664265dc1.herokuapp.com/files/upload';
     const filesToUpload = [
       { file: selectedAvatar, type: 'Ảnh khuôn mặt' },
       { file: selectedImgBg, type: 'Ảnh nền/đại diện' },
-      { file: selectedLicense, type: 'Giấy phép kinh doanh' }
+      { file: selectedLicenseFront, type: 'Giấy phép kinh doanh mặt trước' },
+      { file: selectedLicenseBack, type: 'Giấy phép kinh doanh mặt sau' },
+      { file: selectedIDFront, type: 'CCCD mặt trước' },
+      { file: selectedIDBack, type: 'CCCD mặt sau' },
     ];
 
     const uploadPromises = filesToUpload.map(item =>
@@ -100,6 +125,8 @@ function RegisterMerchant() {
 
     try {
       const results = await Promise.all(uploadPromises);
+      console.log(results);
+      
       const errors = results.filter(result => result.error);
       const successURLs = results.filter(result => !result.error).map(result => result.url);
 
@@ -134,7 +161,10 @@ function RegisterMerchant() {
     e.preventDefault();
     if (validateEmail() && validatePhoneNumber()) {
       setLoading(true);
+      console.log("xyz")
       await new Promise(resolve => setTimeout(resolve, 1000));
+      console.log("cmm");
+      
       console.log(checkSelectedImages());
       if (checkSelectedImages()) {
         const uploadSuccess = await fileUploadHandler();
@@ -142,7 +172,7 @@ function RegisterMerchant() {
         if (uploadSuccess) {
           const formDataToSend = mapFormDataToApiDataMerchant(formData, uploadedURLs);
 
-          axios.post('http://localhost:3001/merchants/createMerchant', JSON.stringify(formDataToSend), {
+          axios.post('https://duantotnghiep-api-a32664265dc1.herokuapp.com/merchants/createMerchant', JSON.stringify(formDataToSend), {
             headers: {
               'Content-Type': 'application/json',
             },

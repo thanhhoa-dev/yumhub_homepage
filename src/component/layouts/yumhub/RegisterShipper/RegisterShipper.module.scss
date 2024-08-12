@@ -44,7 +44,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 700px;
+  height: 800px;
 }
 
 .form-group {
@@ -264,4 +264,24 @@
   .form-group select {
     padding: 6px;
   }
+  // RegisterShipper.module.scss
+.scroll-container {
+  max-height: 400px; // Điều chỉnh chiều cao tùy ý
+  overflow-y: auto;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.text-input, .file-input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
 }

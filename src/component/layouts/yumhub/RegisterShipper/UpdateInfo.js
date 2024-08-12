@@ -9,7 +9,7 @@ function UpdateShipperInfo() {
   const { setLoading } = useLoading();
   const { showNotification } = useNotification();
   const [formData, setFormData] = useState({
-    image: '',
+    avatar: '',
     fullName: '',
     address: '',
     email: '',
@@ -69,7 +69,7 @@ function UpdateShipperInfo() {
   };
 
   const fileUploadHandler = async () => {
-    const endpoint = 'http://localhost:3001/files/upload';
+    const endpoint = 'https://duantotnghiep-api-a32664265dc1.herokuapp.com/files/upload';
     const filesToUpload = Object.keys(formData)
       .filter(key => formData[key] instanceof File)  // Only select the files
       .map(key => ({ file: formData[key], field: key }));
@@ -80,8 +80,10 @@ function UpdateShipperInfo() {
         .catch(error => ({ field: item.field, error: true }))
     );
 
+    
     try {
       const results = await Promise.all(uploadPromises);
+      console.log(results);
       const errors = results.filter(result => result.error);
       const successURLs = results.filter(result => !result.error);
 
@@ -120,9 +122,9 @@ function UpdateShipperInfo() {
     });
 
     try {
-      const response = await axios.patch(`http://localhost:3001/shippers/updateShipper-web?id=${id}`, formDataToSend, {
+      const response = await axios.patch(`https://duantotnghiep-api-a32664265dc1.herokuapp.com/shippers/updateShipper-web?id=${id}`, JSON.stringify(formDataToSend), {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          'Content-Type': 'application/json',
         },
       });
 

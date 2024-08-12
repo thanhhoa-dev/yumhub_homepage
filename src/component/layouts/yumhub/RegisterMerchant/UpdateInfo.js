@@ -59,7 +59,7 @@ function UpdateMerchantInfo() {
   };
 
   const fileUploadHandler = async () => {
-    const endpoint = 'http://localhost:3001/files/upload';
+    const endpoint = 'https://duantotnghiep-api-a32664265dc1.herokuapp.com/files/upload';
     const filesToUpload = Object.keys(formData)
       .filter(key => formData[key] instanceof File)  // Chỉ chọn các file
       .map(key => ({ file: formData[key], field: key }));
@@ -110,7 +110,7 @@ function UpdateMerchantInfo() {
     });
 
     try {
-      const response = await axios.patch(`http://localhost:3001/shippers/updateShipper-web?id=${id}`, formDataToSend, {
+      const response = await axios.patch(`https://duantotnghiep-api-a32664265dc1.herokuapp.com/shippers/updateShipper-web?id=${id}`, formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

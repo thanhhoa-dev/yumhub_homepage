@@ -11,6 +11,12 @@ export const fileUpload = async (file, endpoint) => {
     },
   });
 };
+const formatTimeTo12Hour = (time24) => {
+  const [hours, minutes] = time24.split(':');
+  const hours12 = (hours % 12) || 12; // Chuyển đổi sang định dạng 12 giờ
+  const period = hours >= 12 ? 'PM' : 'AM'; // Xác định AM hoặc PM
+  return `${hours12}:${minutes} ${period}`;
+};
 
 export const mapFormDataToApiData = (formData, uploadedURLs) => {
   const avatarURL = uploadedURLs[0] || '';
@@ -18,6 +24,8 @@ export const mapFormDataToApiData = (formData, uploadedURLs) => {
   const idBackURL = uploadedURLs[2] || '';
   const driverFrontURL = uploadedURLs[3] || '';
   const driverBackURL = uploadedURLs[4] || '';
+  const parrotFrontURL = uploadedURLs[5] || '';
+  const parrotBackURL = uploadedURLs[6] || '';
 
   return {
     fullName: formData["Họ và tên"],
@@ -34,25 +42,35 @@ export const mapFormDataToApiData = (formData, uploadedURLs) => {
     idBike: formData["Biển số xe"],
     brandBike: formData["Thương hiệu xe"],
     modeCode: formData["Modecode"],
+    parrotCarFontSide: parrotFrontURL,
+    parrotCarBackSide: parrotBackURL
   };
 };
 export const mapFormDataToApiDataMerchant = (formData, uploadedURLs) => {
   const imgbg = uploadedURLs[0] || '';
-  const license = uploadedURLs[1] || '';
-  const avatar = uploadedURLs[2] || '';
+  const licenseFront = uploadedURLs[1] || '';
+  const licenseBack = uploadedURLs[2] || '';
+  const avatar = uploadedURLs[3] || '';
+  const idFront = uploadedURLs[4] || '';
+  const idBack = uploadedURLs[5] || '';
+console.log("uploadedURLs", uploadedURLs);
 
   return {
     name: formData["Tên cửa hàng"],
     address: formData["Địa chỉ"],
     type: "661760e3fc13ae3574ab8cde",
-    openTime: formData["Giờ mở cửa"],
-    closeTime: formData["Giờ đóng cửa"],
+    openTime: formatTimeTo12Hour(formData["Giờ mở cửa"]),
+    closeTime: formatTimeTo12Hour(formData["Giờ đóng cửa"]),
     imageBackground: imgbg,
-    imageDocuments: [license],
+    businessFrontSide: licenseFront,
+    businessBackSide: licenseBack,
     fullName: formData["Họ và tên"],
     phoneNumber: formData["Số điện thoại"],
     email: formData["Email"],
     avatar: avatar,
     sex: formData["Giới tính"],
+    idCardFrontSide: idFront,
+    idCardBackSide: idBack,
   };
 };
+
