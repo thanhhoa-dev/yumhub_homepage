@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { useLoading } from "../../../../context/LoadingContext";
@@ -32,7 +32,7 @@ function UpdateShipperInfo() {
   const id = path.split('/')[2];
   
   const fieldMapping = {
-    '1': 'image',
+    '1': 'avatar',
     '2': 'fullName',
     '3': 'address',
     '4': 'email',
@@ -80,10 +80,8 @@ function UpdateShipperInfo() {
         .catch(error => ({ field: item.field, error: true }))
     );
 
-    
     try {
       const results = await Promise.all(uploadPromises);
-      console.log(results);
       const errors = results.filter(result => result.error);
       const successURLs = results.filter(result => !result.error);
 
@@ -93,7 +91,7 @@ function UpdateShipperInfo() {
       } else {
         const updatedFormData = { ...formData };
         successURLs.forEach(item => {
-          updatedFormData[item.field] = item.url;  // Overwrite file with URL
+          updatedFormData[item.field] = item.url;  // Replace file with URL string
         });
         setFormData(updatedFormData);
         return true;
@@ -114,15 +112,16 @@ function UpdateShipperInfo() {
       return;
     }
 
-    const formDataToSend = new FormData();
-    Object.keys(formData).forEach(key => {
+    // Prepare JSON payload
+    const dataToSend = Object.keys(formData).reduce((acc, key) => {
       if (formData[key]) {
-        formDataToSend.append(key, formData[key]);
+        acc[key] = formData[key];
       }
-    });
-
+      return acc;
+    }, {});
+    console.log(dataToSend)
     try {
-      const response = await axios.patch(`https://duantotnghiep-api-a32664265dc1.herokuapp.com/shippers/updateShipper-web?id=${id}`, JSON.stringify(formDataToSend), {
+      const response = await axios.patch(`https://duantotnghiep-api-a32664265dc1.herokuapp.com/shippers/updateShipper-web?id=${id}`, JSON.stringify(dataToSend), {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -143,11 +142,11 @@ function UpdateShipperInfo() {
   return (
     <div>
       <h2>Cập nhật thông tin</h2>
-      <form onSubmit={handleUpdate} encType="multipart/form-data">
-        {fieldsToUpdate.image && (
+      <form onSubmit={handleUpdate}>
+        {fieldsToUpdate.avatar && (
           <div>
             <label>Ảnh đại diện</label>
-            <input type="file" name="image" onChange={(e) => handleFileChange(e, "image")} required />
+            <input type="file" name="avatar" onChange={(e) => handleFileChange(e, "avatar")} required />
           </div>
         )}
         {fieldsToUpdate.fullName && (

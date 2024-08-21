@@ -161,9 +161,7 @@ function RegisterMerchant() {
     e.preventDefault();
     if (validateEmail() && validatePhoneNumber()) {
       setLoading(true);
-      console.log("xyz")
       await new Promise(resolve => setTimeout(resolve, 1000));
-      console.log("cmm");
       
       console.log(checkSelectedImages());
       if (checkSelectedImages()) {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { useLoading } from "../../../../context/LoadingContext";
@@ -9,12 +9,12 @@ function UpdateMerchantInfo() {
   const { setLoading } = useLoading();
   const { showNotification } = useNotification();
   const [formData, setFormData] = useState({
-    image: '',
-    fullName: '',
+    imageBackground: '',
+    name: '',
     address: '',
     email: '',
     phoneNumber: '',
-    nameOwner:"",
+    fullName:"",
     IDCardFont: '',
     IDCardBack: '',
     businessLicenseFont: '',
@@ -26,18 +26,20 @@ function UpdateMerchantInfo() {
   const path = location.pathname;
   const fieldsString = path.split('/').pop(); // Lấy chuỗi số từ URL
   const id = path.split('/')[2];
+
   const fieldMapping = {
-    '1': 'image',
+    '1': 'imageBackground',
     '2': 'name',
     '3': 'address',
     '4': 'email',
     '5': 'phoneNumber',
-    '6': 'nameOwner',
+    '6': 'fullName',
     '7': 'IDCard',
     '8': 'businessLicense',
   };
 
   const fieldsToUpdate = {};
+
   for (let char of fieldsString) {
     fieldsToUpdate[fieldMapping[char]] = true;
   }
@@ -102,17 +104,19 @@ function UpdateMerchantInfo() {
       return;
     }
 
-    const formDataToSend = new FormData();
-    Object.keys(formData).forEach(key => {
+    // Prepare JSON payload
+    const dataToSend = Object.keys(formData).reduce((acc, key) => {
       if (formData[key]) {
-        formDataToSend.append(key, formData[key]);
+        acc[key] = formData[key];
       }
-    });
-
+      return acc;
+    }, {});
+    console.log(dataToSend)
+    console.log("id", id)
     try {
-      const response = await axios.patch(`https://duantotnghiep-api-a32664265dc1.herokuapp.com/shippers/updateShipper-web?id=${id}`, formDataToSend, {
+      const response = await axios.patch(`https://duantotnghiep-api-a32664265dc1.herokuapp.com/merchants/updateMerchant-web?id=${id}`, JSON.stringify(dataToSend), {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          'Content-Type': 'application/json',
         },
       });
 
@@ -123,24 +127,25 @@ function UpdateMerchantInfo() {
       }
     } catch (error) {
       showNotification("Có lỗi xảy ra khi cập nhật", "error", true);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
     <div>
       <h2>Cập nhật thông tin</h2>
       <form onSubmit={handleUpdate} encType="multipart/form-data">
-        {fieldsToUpdate.image && (
+        {fieldsToUpdate.imageBackground && (
           <div>
             <label>Ảnh đại diện cửa hàng</label>
-            <input type="file" name="image" onChange={(e) => handleFileChange(e, "image")} required />
+            <input type="file" name="imageBackground" onChange={(e) => handleFileChange(e, "imageBackground")} required />
           </div>
         )}
         {fieldsToUpdate.name && (
           <div>
             <label>Tên cửa hàng</label>
-            <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required />
+            <input type="text" name="name" value={formData.name} onChange={handleChange} required />
           </div>
         )}
         {fieldsToUpdate.address && (
@@ -161,18 +166,18 @@ function UpdateMerchantInfo() {
             <input type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required />
           </div>
         )}
-        {fieldsToUpdate.nameOwner && (
+        {fieldsToUpdate.fullName && (
           <div>
             <label>Tên chủ cửa hàng</label>
-            <input type="text" name="nameOwner" value={formData.nameOwner} onChange={handleChange} required />
+            <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required />
           </div>
         )}
-        {fieldsToUpdate.IDCard && (
+        {/* {fieldsToUpdate.IDCard && (
           <div>
             <label>Biển số xe</label>
             <input type="text" name="IDCardFont" value={formData.IDCard} onChange={handleChange} required />
           </div>
-        )}
+        )} */}
         {fieldsToUpdate.IDCard && (
           <div>
             <label>Mặt trước CCCD</label>
@@ -183,9 +188,9 @@ function UpdateMerchantInfo() {
         )}
         {fieldsToUpdate.businessLicense && (
           <div>
-            <label>Mặt trước GPLX</label>
+            <label>Mặt trước GPKD</label>
             <input type="file" name="businessLicenseFont" onChange={(e) => handleFileChange(e, "businessLicenseFont")} required />
-            <label>Mặt sau GPLX</label>
+            <label>Mặt sau GPKD</label>
             <input type="file" name="businessLicenseBack" onChange={(e) => handleFileChange(e, "businessLicenseBack")} required />
           </div>
         )}
