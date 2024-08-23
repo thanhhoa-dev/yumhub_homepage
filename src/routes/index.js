@@ -11,15 +11,14 @@ import UpdateShipperInfo from '../component/layouts/yumhub/RegisterShipper/Updat
 import UpdateMerchantInfo from '../component/layouts/yumhub/RegisterMerchant/UpdateInfo'
 
 const mapRoutes = [
-    { path: '/yumhub_homepage', component: Home, layout: DefaultLayout },
+    { path: '/', component: Home, layout: DefaultLayout },
     { path: '/shipper', component: Shipper, layout: DefaultLayout }, 
     { path: '/merchant', component: Merchant, layout: DefaultLayout}, 
     { path: '/register-shipper', component: RegiterShipper, layout: DefaultLayout}, 
     { path: '/register-merchant', component: RegisterMerchant, layout: DefaultLayout }, 
-    { path: '/yumhub', component: YumHub, layout: DefaultLayout },
-
+    { path: '/about', component: YumHub, layout: DefaultLayout },
     { path: '/updateInfoShipper/:id/:token', component: UpdateShipperInfo, layout: DefaultLayout },
-    { path: 'updateInfoMerchant/:id/:token', component: UpdateMerchantInfo, layout: DefaultLayout },
+    { path: '/updateInfoMerchant/:id/:token', component: UpdateMerchantInfo, layout: DefaultLayout },
 
 ]
 

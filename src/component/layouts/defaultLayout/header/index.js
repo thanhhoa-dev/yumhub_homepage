@@ -19,11 +19,11 @@ function Header() {
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
         <div className={cx("logo")}>
-          <Link to="/yumhub_homepage">
+          <Link to="/">
             <img src={logo} alt="Logo YumHub" />
             
           </Link>
-          <Link to="/yumhub_homepage">
+          <Link to="/">
           <p className={cx("textLogo")}>YumHub</p>
           </Link>
         </div>

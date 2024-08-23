@@ -20,7 +20,7 @@ const AppContent = () => {
   const { loading } = useLoading();
 
   return (
-    <Router>
+    <Router basename="/yumhub_homepage">
       <div className="App" style={{ backgroundColor: '#f5f5f5', width: '100vw', height: '100vh' }}>
         {loading && <Loading />}
         <Routes>
