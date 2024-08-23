@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import DefaultLayout from "./component/layouts/defaultLayout/defaultLayout";
 import { mapRoutes } from "./routes";
 import { LoadingProvider, useLoading } from './context/LoadingContext';
@@ -20,7 +20,7 @@ const AppContent = () => {
   const { loading } = useLoading();
 
   return (
-    <Router basename="/yumhub_homepage">
+    <Router>
       <div className="App" style={{ backgroundColor: '#f5f5f5', width: '100vw', height: '100vh' }}>
         {loading && <Loading />}
         <Routes>
