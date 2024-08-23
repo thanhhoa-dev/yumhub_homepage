@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/yumhub_homepage/static/css/main.345ad089.css",
-    "main.js": "/yumhub_homepage/static/js/main.f71179ef.js",
+    "main.js": "/yumhub_homepage/static/js/main.4a7ff9f8.js",
     "static/js/453.8517acd5.chunk.js": "/yumhub_homepage/static/js/453.8517acd5.chunk.js",
     "static/media/bannermerchant.png": "/yumhub_homepage/static/media/bannermerchant.1ca976cbbecbb7cb46e1.png",
     "static/media/bannershipper.png": "/yumhub_homepage/static/media/bannershipper.eae91614ef704090f159.png",
@@ -18,11 +18,11 @@
     "static/media/logoYumhub.png": "/yumhub_homepage/static/media/logoYumhub.459773ebacc881c1eb63.png",
     "index.html": "/yumhub_homepage/index.html",
     "main.345ad089.css.map": "/yumhub_homepage/static/css/main.345ad089.css.map",
-    "main.f71179ef.js.map": "/yumhub_homepage/static/js/main.f71179ef.js.map",
+    "main.4a7ff9f8.js.map": "/yumhub_homepage/static/js/main.4a7ff9f8.js.map",
     "453.8517acd5.chunk.js.map": "/yumhub_homepage/static/js/453.8517acd5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.345ad089.css",
-    "static/js/main.f71179ef.js"
+    "static/js/main.4a7ff9f8.js"
   ]
 }
