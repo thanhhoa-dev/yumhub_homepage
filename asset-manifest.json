@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/yumhub_homepage/static/css/main.345ad089.css",
+    "main.js": "/yumhub_homepage/static/js/main.f84d36fe.js",
+    "static/js/453.8517acd5.chunk.js": "/yumhub_homepage/static/js/453.8517acd5.chunk.js",
+    "static/media/bannermerchant.png": "/yumhub_homepage/static/media/bannermerchant.1ca976cbbecbb7cb46e1.png",
+    "static/media/bannershipper.png": "/yumhub_homepage/static/media/bannershipper.eae91614ef704090f159.png",
+    "static/media/features.png": "/yumhub_homepage/static/media/features.04cefc9ac8a25b4acf32.png",
+    "static/media/demomerchantregister.png": "/yumhub_homepage/static/media/demomerchantregister.e7074e59ebcc3dd8b127.png",
+    "static/media/1.png": "/yumhub_homepage/static/media/1.d4ce60c1d578e3bfd002.png",
+    "static/media/demoshipperregister.png": "/yumhub_homepage/static/media/demoshipperregister.a3ce087222a0ea20758b.png",
+    "static/media/4.png": "/yumhub_homepage/static/media/4.1555fb1e035c8cf79e79.png",
+    "static/media/sumenh.png": "/yumhub_homepage/static/media/sumenh.5977eae445f48d1243d1.png",
+    "static/media/a.png": "/yumhub_homepage/static/media/a.815b6778aaac349f03d8.png",
+    "static/media/demoshipper.png": "/yumhub_homepage/static/media/demoshipper.bf6e2ac174a6e7a7c30e.png",
+    "static/media/demomerchant.png": "/yumhub_homepage/static/media/demomerchant.44f4740e2a049e9fc00a.png",
+    "static/media/benefits.png": "/yumhub_homepage/static/media/benefits.bf94c533ffc5c4430044.png",
+    "static/media/logoYumhub.png": "/yumhub_homepage/static/media/logoYumhub.459773ebacc881c1eb63.png",
+    "index.html": "/yumhub_homepage/index.html",
+    "main.345ad089.css.map": "/yumhub_homepage/static/css/main.345ad089.css.map",
+    "main.f84d36fe.js.map": "/yumhub_homepage/static/js/main.f84d36fe.js.map",
+    "453.8517acd5.chunk.js.map": "/yumhub_homepage/static/js/453.8517acd5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.345ad089.css",
+    "static/js/main.f84d36fe.js"
+  ]
+}
